@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Comic;
+use Illuminate\Support\Facades\Route;
 
 class ComicsController extends Controller
 {
@@ -15,7 +16,6 @@ class ComicsController extends Controller
     public function index()
     {
         $comics = Comic::all();
-
         return view('admin.comics.index', compact('comics'));
     }
 
@@ -26,6 +26,7 @@ class ComicsController extends Controller
      */
     public function create()
     {
+        
         return view('admin.comics.create');
     }
 
@@ -37,6 +38,10 @@ class ComicsController extends Controller
      */
     public function store(Request $request)
     {
+        // $request->validate(
+
+        // );
+
         $formData = $request->all();
 
         $comic = new Comic();
