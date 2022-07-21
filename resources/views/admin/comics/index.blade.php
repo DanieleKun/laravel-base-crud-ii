@@ -34,14 +34,27 @@
                             <a href="{{ route('comics.edit', ['comic' => $comic]) }}" class="btn btn-warning">Edit</a>
                         </td>
                         <td>
-                            <form action="{{ route('comics.destroy', ['comic' => $comic])}}" method="post">
+                            <button class="btn btn-danger js-delete">Delete</button>
+                            {{-- <form action="{{ route('comics.destroy', ['comic' => $comic])}}" method="post">
                                 @csrf
                                 @method('delete')
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </form>
+                                <button type="submit" class="btn btn-danger js-delete">Delete</button>
+                            </form> --}}
                         </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
+
+        {{ $comics->links() }}
+
+        <section>
+            <div class="overlay d-none">
+                <div class="popup">
+                    <h2>Sei sicuro?</h2>
+                    <button class="btn btn-warning js-yes">Yes</button>
+                    <button class="btn btn-danger js-no">NO</button>
+                </div>
+            </div>
+        </section>
 @endsection

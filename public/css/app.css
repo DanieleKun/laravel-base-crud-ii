@@ -12149,3 +12149,18 @@ fieldset:disabled .btn {
   }
 }
 
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+}
+
+.overlay .popup {
+  padding: 2rem;
+  background-color: white;
+  border-radius: 1rem;
+  margin: auto;
+  text-align: center;
+}
+

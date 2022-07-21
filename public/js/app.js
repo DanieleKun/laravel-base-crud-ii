@@ -27603,6 +27603,15 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
+var deleteButtons = document.querySelectorAll('.js-delete');
+var eleOverlay = document.querySelector('.overlay');
+console.log(deleteButtons);
+deleteButtons.forEach(function (button) {
+  button.addEventListener('click', function () {
+    eleOverlay.classList.remove('d-none');
+  });
+});
+document.querySelector('.js-no').addEventListener('click', function () {});
 
 /***/ }),
 
